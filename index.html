@@ -43,26 +43,25 @@
 
       .logo {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         cursor: pointer;
         text-decoration: none;
       }
 
       .logo-text {
         font-family: "Press Start 2P", cursive;
-        font-size: 1.75rem;
+        font-size: clamp(0.6rem, 2.5vw, 1.1rem);
         color: #6B8FAD;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
-        text-shadow:
-          2px 2px 0 #2c2c2c;
+        letter-spacing: 0.05em;
+        text-shadow: 2px 2px 0 #2c2c2c;
+        line-height: 1;
       }
 
       .logo-boot {
-        height: 35px;
+        height: clamp(18px, 4vw, 28px);
         image-rendering: pixelated;
-        margin-left: -2px;
-        margin-bottom: 5px;
+        margin-left: 1px;
       }
 
       header .cta-btn {
@@ -346,6 +345,10 @@
         .intro-text .hook {
           font-size: 0.8rem;
         }
+
+        .logo-text {
+          text-shadow: 1px 1px 0 #2c2c2c;
+        }
       }
 
       @media (max-width: 480px) {
@@ -364,6 +367,14 @@
         .content .cta-btn {
           padding: 0.75rem 1.25rem;
           font-size: 0.55rem;
+        }
+
+        header {
+          padding: 0.5rem 1rem;
+        }
+
+        .logo-text {
+          letter-spacing: 0.02em;
         }
       }
 
