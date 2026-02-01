@@ -1,402 +1,514 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spur Intel - AI-Powered Prospecting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spur Intel | AI-Powered B2B Prospecting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1a1a2e;
-            line-height: 1.6;
-        }
+      body {
+        font-family: "Space Mono", monospace;
+        color: #2c2c2c;
+      }
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.25rem 4rem;
-            background: white;
-        }
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 0.5rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
 
-        .logo {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #2563eb;
-            text-decoration: none;
-        }
+      .logo img {
+        height: 40px;
+        image-rendering: pixelated;
+        cursor: pointer;
+      }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
+      header .cta-btn {
+        padding: 0.6rem 1.2rem;
+        background: #6B8FAD;
+        color: white;
+        text-decoration: none;
+        font-family: "Press Start 2P", cursive;
+        font-size: 0.5rem;
+        text-transform: uppercase;
+        border: 2px solid #2c2c2c;
+        box-shadow: 3px 3px 0 #2c2c2c;
+        transition: all 0.2s ease;
+      }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #1a1a2e;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+      header .cta-btn:hover {
+        transform: translate(1px, 1px);
+        box-shadow: 2px 2px 0 #2c2c2c;
+      }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #2563eb;
-        }
+      html, body {
+        overflow-x: hidden;
+      }
 
-        /* Hero Section */
+      /* Hero */
+      .hero {
+        min-height: 50vh;
+        margin-top: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url("SCB.png") center bottom / cover no-repeat;
+        image-rendering: pixelated;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero h1 {
+        font-family: "Press Start 2P", cursive;
+        font-size: clamp(1rem, 4vw, 2.5rem);
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-shadow:
+          3px 3px 0 #2c2c2c,
+          6px 6px 0 #2c2c2c;
+        text-align: center;
+        padding: 0 1rem;
+        white-space: nowrap;
+      }
+
+      /* Content */
+      .content {
+        background: white;
+        padding: 4rem 3rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .content h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .content p {
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 1.5rem;
+      }
+
+      .content a {
+        color: #8b5a2b;
+        font-weight: 700;
+      }
+
+      .intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid #2c2c2c;
+        gap: 2rem;
+      }
+
+      .intro-text .hook {
+        font-family: "Press Start 2P", cursive;
+        font-size: 1rem;
+        color: #2c2c2c;
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+      }
+
+      .intro-text .hook span {
+        color: #6B8FAD;
+      }
+
+      .intro-text .description {
+        font-size: 0.9rem;
+        color: #555;
+        max-width: 500px;
+      }
+
+      .content .cta-btn {
+        padding: 1rem 2rem;
+        background: #6B8FAD;
+        color: white;
+        text-decoration: none;
+        font-family: "Press Start 2P", cursive;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        border: 3px solid #2c2c2c;
+        box-shadow: 4px 4px 0 #2c2c2c;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+      }
+
+      .content .cta-btn:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0 #2c2c2c;
+      }
+
+      /* Section spacing */
+      .section {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      /* Stats highlight */
+      .stats-highlight {
+        background: #f8f6f3;
+        border: 3px solid #2c2c2c;
+        padding: 1.5rem 2rem;
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .stats-highlight .stat-number {
+        font-family: "Press Start 2P", cursive;
+        font-size: 1.5rem;
+        color: #6B8FAD;
+        white-space: nowrap;
+      }
+
+      .stats-highlight .stat-text {
+        font-size: 0.9rem;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      /* How it works */
+      .how-it-works {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .step {
+        text-align: center;
+        padding: 1.5rem 1rem;
+      }
+
+      .step-number {
+        font-family: "Press Start 2P", cursive;
+        font-size: 1.25rem;
+        color: #6B8FAD;
+        margin-bottom: 0.75rem;
+      }
+
+      .step-title {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.05em;
+      }
+
+      .step-desc {
+        font-size: 0.8rem;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      /* Deliverables */
+      .deliverables {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .deliverable {
+        background: #f8f6f3;
+        padding: 1rem;
+        border-left: 3px solid #6B8FAD;
+      }
+
+      .deliverable-title {
+        font-weight: 700;
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .deliverable-desc {
+        font-size: 0.8rem;
+        color: #555;
+      }
+
+      /* Emphasis text */
+      .emphasis {
+        font-weight: 700;
+        color: #2c2c2c;
+      }
+
+      /* Contact section */
+      #contact {
+        background: #f8f6f3;
+        padding: 3rem;
+        text-align: center;
+        border-top: 3px solid #2c2c2c;
+      }
+
+      #contact h2 {
+        font-family: "Press Start 2P", cursive;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      #contact p {
+        max-width: 500px;
+        margin: 0 auto 1.5rem;
+      }
+
+      #contact .cta-btn {
+        display: inline-block;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
         .hero {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%);
-            padding: 6rem 4rem 7rem;
-            position: relative;
-            overflow: hidden;
+          min-height: 40vh;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, transparent 70%);
-            pointer-events: none;
+        .intro {
+          flex-direction: column;
+          text-align: center;
         }
 
-        .hero-content {
-            max-width: 720px;
-            position: relative;
-            z-index: 1;
+        .intro-text .description {
+          max-width: 100%;
         }
 
-        .hero h1 {
-            font-size: 3.25rem;
-            font-weight: 700;
-            color: white;
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
-        }
-
-        .hero .subhead {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2.5rem;
-            max-width: 540px;
-        }
-
-        .hero-bullets {
-            list-style: none;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-bullets li {
-            color: rgba(255,255,255,0.95);
-            font-size: 1.05rem;
-            margin-bottom: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .hero-bullets li::before {
-            content: '';
-            width: 22px;
-            height: 22px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2334d399' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 14px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #2563eb;
-            padding: 1rem 2.25rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-        }
-
-        /* How It Works Section */
         .how-it-works {
-            padding: 5rem 4rem;
-            background: #fafbfc;
+          grid-template-columns: 1fr;
         }
 
-        .section-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3.5rem;
-            color: #1a1a2e;
+        .deliverables {
+          grid-template-columns: 1fr;
         }
 
-        .steps {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 0 auto;
+        .stats-highlight {
+          flex-direction: column;
+          text-align: center;
         }
 
-        .step {
-            flex: 1;
-            max-width: 280px;
-            text-align: center;
+        header .cta-btn {
+          font-size: 0.4rem;
+          padding: 0.5rem 0.8rem;
         }
 
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin: 0 auto 1.25rem;
+        .content {
+          padding: 2.5rem 1.5rem;
         }
 
-        .step h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-            color: #1a1a2e;
+        .intro-text .hook {
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          min-height: 35vh;
         }
 
-        .step p {
-            font-size: 0.95rem;
-            color: #64748b;
-            line-height: 1.55;
+        .content {
+          padding: 2rem 1rem;
         }
 
-        /* Services Section */
-        .services {
-            padding: 5rem 4rem;
-            background: white;
+        .intro-text .hook {
+          font-size: 0.65rem;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        .content .cta-btn {
+          padding: 0.75rem 1.25rem;
+          font-size: 0.55rem;
         }
+      }
 
-        .service-card {
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
+      /* Scroll animations */
+      .section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
 
-        .service-card:hover {
-            border-color: #2563eb;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
-        }
+      .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        .service-card h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #2563eb;
-            margin-bottom: 0.5rem;
-        }
-
-        .service-card .price {
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .service-card p {
-            font-size: 0.9rem;
-            color: #475569;
-            line-height: 1.55;
-        }
-
-        /* Proof Section */
-        .proof {
-            padding: 4rem 4rem;
-            background: #f8fafc;
-            text-align: center;
-        }
-
-        .proof-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .proof-stat {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #2563eb;
-            margin-bottom: 0.5rem;
-        }
-
-        .proof-label {
-            font-size: 1.1rem;
-            color: #1a1a2e;
-            margin-bottom: 1rem;
-        }
-
-        .proof-context {
-            font-size: 0.95rem;
-            color: #64748b;
-        }
-
-        /* Footer */
-        footer {
-            background: #1e293b;
-            color: rgba(255,255,255,0.7);
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
-            .hero {
-                padding: 4rem 1.5rem 5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.25rem;
-            }
-
-            .steps {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .how-it-works,
-            .services,
-            .proof {
-                padding: 3rem 1.5rem;
-            }
-        }
+      /* Smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
-</head>
-<body>
-    <nav>
-        <a href="#" class="logo">Spur Intel</a>
-        <div class="nav-links">
-            <a href="#" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="spur_intel.png" alt="Spur Intel" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" />
+      </div>
+      <a href="#contact" class="cta-btn">Get In Touch</a>
+    </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>AI-Powered Prospecting for B2B Sales Teams</h1>
-            <p class="subhead">Stop burning hours on manual research. Get deeply-researched prospect intelligence delivered to your inbox.</p>
-            <ul class="hero-bullets">
-                <li>AI-researched account briefs on every prospect</li>
-                <li>Segment-specific targeting that actually converts</li>
-                <li>Personalized outreach angles, not generic templates</li>
-            </ul>
-            <a href="contact.html" class="cta-button">Get Started</a>
-        </div>
+      <h1>Accelerate Outreach</h1>
     </section>
 
-    <section class="how-it-works">
-        <h2 class="section-title">How It Works</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Define Your ICP</h3>
-                <p>Tell us who you're targeting—industry, company size, geography, and key signals.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>We Find your perfect fits</h3>
-                <p>Our AI pipeline pulls firmographics, news, tech stack, and pain point indicators.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>You Close</h3>
-                <p>Receive enriched prospect lists with personalized outreach angles ready to send.</p>
-            </div>
+    <section class="content">
+      <div class="intro">
+        <div class="intro-text">
+          <p class="hook">AI outreach is the wild west.<span> Hire a sharper gun.</span></p>
+          <p class="description">
+            AI-powered outreach that turns hours of research into ready-to-send campaigns. Not templates. Not mail merge. Genuine personalization that gets responses.
+          </p>
         </div>
+        <a href="#contact" class="cta-btn">Get Started</a>
+      </div>
+
+      <div class="section">
+        <h2>What We Do</h2>
+        <p>
+          Spur Intel builds custom AI workflows that research target accounts, identify the right buyers, and generate personalized outreach. Every message is tailored to the recipient based on deep company and contact research.
+        </p>
+        <p>
+          You tell me who you want to reach. I handle the research, contact identification, and personalized messaging. Within days, you have outreach ready to go.
+        </p>
+
+        <div class="stats-highlight">
+          <span class="stat-number">10-15%</span>
+          <span class="stat-text">reply rates on cold outreach, compared to the 1-3% industry average. The difference is research depth.</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>How It Works</h2>
+        <div class="how-it-works">
+          <div class="step">
+            <div class="step-number">01</div>
+            <div class="step-title">You Point</div>
+            <div class="step-desc">Send a target list, define your ICP, or name the market you want to crack.</div>
+          </div>
+          <div class="step">
+            <div class="step-number">02</div>
+            <div class="step-title">I Research</div>
+            <div class="step-desc">AI workflows dig into each account and contact. Real intelligence, not scraped data.</div>
+          </div>
+          <div class="step">
+            <div class="step-number">03</div>
+            <div class="step-title">You Send</div>
+            <div class="step-desc">Review, approve, and send from your own tools. Once we're live, new campaigns turn around in days.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>What You Get</h2>
+        <p>Every campaign delivers a complete outreach package:</p>
+        <div class="deliverables">
+          <div class="deliverable">
+            <div class="deliverable-title">Target Account List</div>
+            <div class="deliverable-desc">Filtered and prioritized with fit rationale for each company</div>
+          </div>
+          <div class="deliverable">
+            <div class="deliverable-title">Account Briefs</div>
+            <div class="deliverable-desc">Research summary per company so you have context before outreach</div>
+          </div>
+          <div class="deliverable">
+            <div class="deliverable-title">Verified Contacts</div>
+            <div class="deliverable-desc">Decision makers at each company with confirmed emails</div>
+          </div>
+          <div class="deliverable">
+            <div class="deliverable-title">Personalized Outreach</div>
+            <div class="deliverable-desc">Custom email and LinkedIn message for every contact</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Getting Started</h2>
+        <p>
+          Before campaigns start flowing, we build a system tailored to your business. This one-time setup typically takes 2-3 weeks:
+        </p>
+        <p>
+          <span class="emphasis">Kickoff session</span> — deep dive on your ICP, target personas, positioning, and messaging tone.
+          <span class="emphasis">Custom workflow builds</span> — AI research and personalization pipelines configured for your market.
+          <span class="emphasis">Messaging frameworks</span> — pain points, value props, and hooks mapped to each persona.
+          <span class="emphasis">Testing and calibration</span> — sample outputs for your review before we go live.
+        </p>
+        <p>
+          Once setup is complete, new campaigns spin up in days. You point, I execute.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>The System Gets Smarter</h2>
+        <p>
+          This isn't a one-off project. The more we work together, the better the results:
+        </p>
+        <p>
+          <span class="emphasis">Messaging sharpens</span> as I learn which angles resonate with your buyers.
+          <span class="emphasis">Segments get clearer</span> with deeper understanding of your ICP.
+          <span class="emphasis">Turnaround gets faster</span> once the system knows your market.
+          <span class="emphasis">Results compound</span> because we're not starting from scratch every time.
+        </p>
+      </div>
     </section>
 
-    <section class="services">
-        <h2 class="section-title">Service Packages</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Prospect List</h3>
-                <p class="price">Starting tier</p>
-                <p>Curated prospect lists matched to your ICP with verified contact data and deep account insights.</p>
-            </div>
-            <div class="service-card">
-                <h3>Account Briefs</h3>
-                <p class="price">Research tier</p>
-                <p>Deep-dive research on each account—recent news, tech stack, hiring signals, and pain points.</p>
-            </div>
-            <div class="service-card">
-                <h3>Outreach Ready</h3>
-                <p class="price">Full service</p>
-                <p>Complete packages with segment-specific messaging angles and personalized email drafts.</p>
-            </div>
-            <div class="service-card">
-                <h3>Pipeline Automation</h3>
-                <p class="price">Enterprise</p>
-                <p>Fully automated prospecting pipeline with ongoing research, segmentation, and outreach generation.</p>
-            </div>
-        </div>
+    <section id="contact">
+      <h2>Let's Talk</h2>
+      <p>
+        Ready to stop researching and start closing? Tell me who you want to reach.
+      </p>
+      <a href="mailto:caiden@spurintel.com" class="cta-btn">Get In Touch</a>
     </section>
 
-    <section class="proof">
-        <div class="proof-content">
-            <div class="proof-stat">30-50+</div>
-            <p class="proof-label">hours of manual research replaced per batch</p>
-            <p class="proof-context">Built on the same AI systems powering enterprise sales automation pipelines with 100% segmentation accuracy.</p>
-        </div>
-    </section>
+    <script>
+      // Scroll animations
+      const sections = document.querySelectorAll('.section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
 
-    <footer>
-        © 2026 Spur Intel. All rights reserved.
-    </footer>
-</body>
+      sections.forEach(section => observer.observe(section));
+    </script>
+  </body>
 </html>
