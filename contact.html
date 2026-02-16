@@ -311,7 +311,6 @@
             </a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="solutions.html" class="nav-link">Solutions</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="index.html" class="nav-cta">Back to Home</a>
             </div>
@@ -327,39 +326,45 @@
 
             <div class="contact-form-card fade-in">
                 <h2>Send us a message</h2>
-                <form id="contact-form" action="mailto:caiden@spurintel.net" method="POST" enctype="text/plain">
+                <form id="contact-form" action="https://formsubmit.co/caiden@spurintel.net" method="POST">
+                    <!-- Formsubmit configuration -->
+                    <input type="hidden" name="_subject" value="New SpurIntel Contact Form Submission">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" style="display:none">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="first-name">First Name</label>
-                            <input type="text" id="first-name" name="first-name" required>
+                            <input type="text" id="first-name" name="First Name" required>
                         </div>
                         <div class="form-group">
                             <label for="last-name">Last Name</label>
-                            <input type="text" id="last-name" name="last-name" required>
+                            <input type="text" id="last-name" name="Last Name" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="Email" required>
                     </div>
                     <div class="form-group">
                         <label for="company">Company</label>
-                        <input type="text" id="company" name="company">
+                        <input type="text" id="company" name="Company">
                     </div>
                     <div class="form-group">
                         <label for="interest">What are you interested in?</label>
-                        <select id="interest" name="interest">
+                        <select id="interest" name="Interest">
                             <option value="" disabled selected>Select an option</option>
-                            <option value="list-building">ICP List Building</option>
-                            <option value="enrichment">Data Enrichment</option>
-                            <option value="outreach">Outbound That Replies</option>
-                            <option value="full-pipeline">Full Pipeline</option>
-                            <option value="other">Something Else</option>
+                            <option value="ICP List Building">ICP List Building</option>
+                            <option value="Data Enrichment">Data Enrichment</option>
+                            <option value="Outbound That Replies">Outbound That Replies</option>
+                            <option value="Full Pipeline">Full Pipeline</option>
+                            <option value="Something Else">Something Else</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your outreach goals..."></textarea>
+                        <textarea id="message" name="Message" placeholder="Tell us about your outreach goals..."></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
