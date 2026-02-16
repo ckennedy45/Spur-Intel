@@ -1,539 +1,1273 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spur Intel | AI-Powered B2B Prospecting</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpurIntel | Full-Service B2B Outbound Execution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Rokkitt:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      body {
-        font-family: "Space Mono", monospace;
-        color: #2c2c2c;
-      }
-
-      /* Header */
-      header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 0.5rem 1.5rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 100;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      }
-
-      .logo {
-        display: flex;
-        align-items: flex-end;
-        cursor: pointer;
-        text-decoration: none;
-      }
-
-      .logo-text {
-        font-family: "Press Start 2P", cursive;
-        font-size: clamp(0.6rem, 2.5vw, 1.1rem);
-        color: #6B8FAD;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        text-shadow: 2px 2px 0 #2c2c2c;
-        line-height: 1;
-      }
-
-      .logo-boot {
-        height: clamp(18px, 4vw, 28px);
-        image-rendering: pixelated;
-        margin-left: 1px;
-      }
-
-      header .cta-btn {
-        padding: 0.6rem 1.2rem;
-        background: #6B8FAD;
-        color: white;
-        text-decoration: none;
-        font-family: "Press Start 2P", cursive;
-        font-size: 0.5rem;
-        text-transform: uppercase;
-        border: 2px solid #2c2c2c;
-        box-shadow: 3px 3px 0 #2c2c2c;
-        transition: all 0.2s ease;
-      }
-
-      header .cta-btn:hover {
-        transform: translate(1px, 1px);
-        box-shadow: 2px 2px 0 #2c2c2c;
-      }
-
-      html, body {
-        overflow-x: hidden;
-      }
-
-      /* Hero */
-      .hero {
-        min-height: 50vh;
-        margin-top: 56px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: url("SCB_NEW.png") center bottom / cover no-repeat;
-        image-rendering: pixelated;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero h1 {
-        font-family: "Press Start 2P", cursive;
-        font-size: clamp(1rem, 4vw, 2.5rem);
-        color: #B86566;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        text-shadow:
-          3px 3px 0 #2c2c2c,
-          6px 6px 0 #2c2c2c;
-        text-align: center;
-        padding: 0 1rem;
-        white-space: nowrap;
-        margin-bottom: 7.5%;
-      }
-
-      /* Content */
-      .content {
-        background: white;
-        padding: 4rem 3rem;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .content h2 {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      .content p {
-        line-height: 1.8;
-        color: #555;
-        margin-bottom: 1.5rem;
-      }
-
-      .content a {
-        color: #8b5a2b;
-        font-weight: 700;
-      }
-
-      .intro {
-        text-align: center;
-        margin-bottom: 3rem;
-        padding-bottom: 2rem;
-        border-bottom: 2px solid #2c2c2c;
-      }
-
-      .intro-text .hook {
-        font-family: "Press Start 2P", cursive;
-        font-size: 1rem;
-        color: #2c2c2c;
-        margin-bottom: 0.75rem;
-        line-height: 1.6;
-      }
-
-      .intro-text .hook span {
-        color: #6B8FAD;
-      }
-
-      .intro-text .description {
-        font-size: 0.9rem;
-        color: #555;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .content .cta-btn {
-        padding: 1rem 2rem;
-        background: #6B8FAD;
-        color: white;
-        text-decoration: none;
-        font-family: "Press Start 2P", cursive;
-        font-size: 0.65rem;
-        text-transform: uppercase;
-        border: 3px solid #2c2c2c;
-        box-shadow: 4px 4px 0 #2c2c2c;
-        transition: all 0.2s ease;
-        white-space: nowrap;
-      }
-
-      .content .cta-btn:hover {
-        transform: translate(2px, 2px);
-        box-shadow: 2px 2px 0 #2c2c2c;
-      }
-
-      /* Section spacing */
-      .section {
-        margin-bottom: 3rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .section:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-
-      /* Stats highlight */
-      .stats-highlight {
-        background: #f8f6f3;
-        border: 3px solid #2c2c2c;
-        padding: 1.5rem 2rem;
-        margin: 2rem 0;
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-      }
-
-      .stats-highlight .stat-number {
-        font-family: "Press Start 2P", cursive;
-        font-size: 1.5rem;
-        color: #6B8FAD;
-        white-space: nowrap;
-      }
-
-      .stats-highlight .stat-text {
-        font-size: 0.9rem;
-        color: #555;
-        line-height: 1.6;
-      }
-
-      /* How it works */
-      .how-it-works {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-        margin: 2rem 0;
-      }
-
-      .step {
-        text-align: center;
-        padding: 1.5rem 1rem;
-      }
-
-      .step-number {
-        font-family: "Press Start 2P", cursive;
-        font-size: 1.25rem;
-        color: #6B8FAD;
-        margin-bottom: 0.75rem;
-      }
-
-      .step-title {
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        margin-bottom: 0.5rem;
-        letter-spacing: 0.05em;
-      }
-
-      .step-desc {
-        font-size: 0.8rem;
-        color: #555;
-        line-height: 1.5;
-      }
-
-      /* Deliverables */
-      .deliverables {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        margin: 1.5rem 0;
-      }
-
-      .deliverable {
-        background: #f8f6f3;
-        padding: 1rem;
-        border-left: 3px solid #6B8FAD;
-      }
-
-      .deliverable-title {
-        font-weight: 700;
-        font-size: 0.85rem;
-        margin-bottom: 0.25rem;
-      }
-
-      .deliverable-desc {
-        font-size: 0.8rem;
-        color: #555;
-      }
-
-      /* Emphasis text */
-      .emphasis {
-        font-weight: 700;
-        color: #2c2c2c;
-      }
-
-      /* Contact section */
-      #contact {
-        background: #f8f6f3;
-        padding: 3rem;
-        text-align: center;
-        border-top: 3px solid #2c2c2c;
-      }
-
-      #contact h2 {
-        font-family: "Press Start 2P", cursive;
-        font-size: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      #contact p {
-        max-width: 500px;
-        margin: 0 auto 1.5rem;
-      }
-
-      #contact .cta-btn {
-        display: inline-block;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .hero {
-          min-height: 40vh;
+        h1, h2, h3 {
+            font-family: 'Rokkitt', serif;
+        }
+        
+        :root {
+            --bg: #F3F3F3;
+            --surface: #FAFAFA;
+            --black: #111111;
+            --gray-dark: #333333;
+            --gray: #555555;
+            --gray-muted: #999999;
+            --gray-light: #E4E4E4;
+            --gray-rule: #D8D8D8;
+            --white: #FFFFFF;
+            --accent: #3494d4;
+        }
+        
+        body {
+            font-family: 'Space Mono', monospace;
+            background: #d5d5d5;
+            color: var(--black);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        .intro-text .description {
-          max-width: 100%;
+        /* ===================== ANIMATED CHROME BORDER ===================== */
+        @keyframes chrome-shift {
+            0%   { background-position: 0% 0%; }
+            50%  { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
         }
 
-        .how-it-works {
-          grid-template-columns: 1fr;
+        .chrome-hover {
+            position: relative;
+        }
+        .chrome-hover::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: inherit;
+            background: linear-gradient(
+                135deg,
+                #0ea5e9 0%,
+                #38bdf8 10%,
+                #0a1e3d 20%,
+                #0ea5e9 30%,
+                #7dd3fc 40%,
+                #0c2d5e 50%,
+                #0ea5e9 60%,
+                #38bdf8 70%,
+                #0a1e3d 80%,
+                #0ea5e9 90%,
+                #38bdf8 100%
+            );
+            background-size: 200% 200%;
+            animation: chrome-shift 16s ease-in-out infinite;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+        }
+        .chrome-hover::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: var(--surface);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .chrome-hover:hover::before {
+            opacity: 1;
+        }
+        .chrome-hover > * {
+            position: relative;
+            z-index: 1;
         }
 
-        .deliverables {
-          grid-template-columns: 1fr;
+        /* ===================== PAGE FRAME ===================== */
+        .page-frame {
+            max-width: 1280px;
+            margin: 0 auto;
+            border-left: 1px solid var(--gray-rule);
+            border-right: 1px solid var(--gray-rule);
+            position: relative;
+            z-index: 1;
+            background: var(--bg);
+            box-shadow: 0 0 80px rgba(0,0,0,0.06);
         }
 
-        .stats-highlight {
-          flex-direction: column;
-          text-align: center;
+        .page-frame::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.045) 1px, transparent 1px);
+            background-size: 320px 320px;
+            pointer-events: none;
+            z-index: 5;
         }
 
-        header .cta-btn {
-          font-size: 0.4rem;
-          padding: 0.5rem 0.8rem;
+        .page-frame::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.025) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+            z-index: 5;
         }
-
-        .content {
-          padding: 2.5rem 1.5rem;
-        }
-
-        .intro-text .hook {
-          font-size: 0.8rem;
-        }
-
-        .logo-text {
-          text-shadow: 1px 1px 0 #2c2c2c;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero {
-          min-height: 35vh;
-        }
-
-        .content {
-          padding: 2rem 1rem;
-        }
-
-        .intro-text .hook {
-          font-size: 0.65rem;
-        }
-
-        .content .cta-btn {
-          padding: 0.75rem 1.25rem;
-          font-size: 0.55rem;
-        }
-
+        
+        /* ===================== HEADER ===================== */
         header {
-          padding: 0.5rem 1rem;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
         }
 
-        .logo-text {
-          letter-spacing: 0.02em;
+        .header-inner {
+            width: 100%;
+            max-width: 1280px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-left: 1px solid var(--gray-rule);
+            border-right: 1px solid var(--gray-rule);
+            border-bottom: 1px solid var(--gray-rule);
         }
-      }
+        
+        .logo {
+            text-decoration: none;
+        }
 
-      /* Scroll animations */
-      .section {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
+        /* ===================== SPURINTEL LOGO COMPONENT ===================== */
+        .spurintel-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+        }
+        .spurintel-logo-text {
+            font-family: 'Rokkitt', serif;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.035em;
+            line-height: 1;
+            color: #000000;
+        }
+        .spurintel-logo-rose {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            color: #3494d4;
+        }
+        .spurintel-logo--dark .spurintel-logo-text {
+            color: #F8FAFC;
+        }
+        .spurintel-logo--dark .spurintel-logo-rose {
+            color: #F8FAFC;
+        }
+        .spurintel-logo--sm .spurintel-logo-text {
+            font-size: 20px;
+        }
+        .spurintel-logo--sm .spurintel-logo-rose {
+            width: 24px;
+            height: 24px;
+        }
 
-      .section.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
 
-      /* Smooth scroll */
-      html {
-        scroll-behavior: smooth;
-      }
+        .nav-link {
+            font-family: 'Space Mono', monospace;
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: var(--gray-dark);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            letter-spacing: 0.01em;
+        }
+        .nav-link:hover { color: var(--black); }
+        
+        .nav-cta {
+            font-family: 'Space Mono', monospace;
+            font-weight: 600;
+            font-size: 0.8125rem;
+            background: var(--black);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            transition: background 0.2s ease;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-cta::after { content: "\203A"; font-size: 1.1rem; line-height: 1; }
+        .nav-cta:hover { background: var(--gray-dark); }
+
+        /* ===================== HERO SECTION ===================== */
+        .hero-section {
+            position: relative;
+            z-index: 2;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-rule);
+            overflow: hidden;
+        }
+        
+        .hero {
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem 2.5rem 0.5rem;
+            position: relative;
+        }
+        
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 750px;
+            height: 480px;
+        }
+        
+        #arrows-canvas {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140%; height: 120%;
+            will-change: transform;
+            z-index: 1;
+        }
+        
+        .headline-box {
+            position: absolute;
+            z-index: 10;
+            background: var(--white);
+            padding: 1.25rem 2.5rem;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .hero-headline {
+            font-family: 'Rokkitt', serif;
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.01em;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+        /* ===================== CONTENT AREA ===================== */
+        .content-area {
+            position: relative;
+            z-index: 2;
+            background: var(--bg);
+        }
+
+        /* ===================== HOOK ===================== */
+        .hook {
+            padding: 2.5rem 2.5rem 2.5rem;
+            position: relative;
+            z-index: 3;
+        }
+        .hook-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hook-accent {
+            width: 48px;
+            height: 3px;
+            background: var(--black);
+            margin: 0 auto 2rem;
+        }
+        .hook h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
+            color: var(--black);
+        }
+        .hook p {
+            font-size: 0.9375rem;
+            color: var(--gray);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .hook-tagline {
+            font-size: 0.875rem;
+            color: var(--gray-muted);
+            margin-top: 1.25rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        /* ===================== STATS BAR ===================== */
+        .stats-bar {
+            padding: 0 2.5rem 2.5rem;
+            position: relative;
+            z-index: 3;
+        }
+        .stats-bar-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--gray-light);
+            border-radius: 12px;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-item:hover {
+            border-color: transparent;
+            box-shadow: 4px 4px 0px #0ea5e9;
+        }
+        .stat-item-number {
+            font-family: 'Rokkitt', serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--black);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 0.375rem;
+        }
+        .stat-item-label {
+            font-size: 0.8125rem;
+            color: var(--gray-dark);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* ===================== DIVIDER ===================== */
+        .section-divider {
+            margin: 0 2.5rem;
+            border: none;
+            border-top: 1px solid var(--gray-rule);
+        }
+
+        /* ===================== HOW IT WORKS (PILLARS) ===================== */
+        .pillars { padding: 2.5rem 2.5rem 5rem; }
+        .pillars-header {
+            max-width: 1100px;
+            margin: 0 auto 3.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 2rem;
+        }
+        .pillars-header h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            color: var(--black);
+            max-width: 500px;
+        }
+        .pillars-header p {
+            font-size: 0.9375rem;
+            color: var(--gray-muted);
+            max-width: 340px;
+            line-height: 1.65;
+            text-align: right;
+        }
+        
+        .pillars-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+        
+        .pillar {
+            background: var(--surface);
+            border-radius: 16px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--gray-light);
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.15);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pillar:hover {
+            border-color: transparent;
+            box-shadow: 5px 5px 0px #0ea5e9;
+        }
+
+        .pillar-visual {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            border-radius: 16px 16px 0 0;
+        }
+        .pillar-visual canvas { display: block; }
+
+        .pillar-body {
+            padding: 1.75rem 2rem 2.25rem;
+            border-top: 1px solid var(--gray-light);
+        }
+        .pillar-step {
+            font-family: 'Rokkitt', serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
+        }
+        .pillar h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+            letter-spacing: -0.02em;
+        }
+        .pillar p {
+            font-size: 0.9375rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ===================== TESTIMONIAL ===================== */
+        .testimonial { padding: 0 2.5rem 2rem; }
+        .testimonial-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            padding: 4.5rem 4rem;
+        }
+        .testimonial-inner::before,
+        .testimonial-inner::after,
+        .testimonial-bracket-bl,
+        .testimonial-bracket-br {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-color: var(--black);
+            border-style: solid;
+            border-width: 0;
+            content: "";
+        }
+        .testimonial-inner::before { top: 0; left: 0; border-top-width: 3px; border-left-width: 3px; }
+        .testimonial-inner::after { top: 0; right: 0; border-top-width: 3px; border-right-width: 3px; }
+        .testimonial-bracket-bl { bottom: 0; left: 0; border-bottom-width: 3px; border-left-width: 3px; }
+        .testimonial-bracket-br { bottom: 0; right: 0; border-bottom-width: 3px; border-right-width: 3px; }
+        .testimonial-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 3.5rem;
+        }
+        .testimonial-quote { max-width: 680px; }
+        .testimonial-text {
+            font-size: 1.375rem;
+            font-weight: 500;
+            line-height: 1.65;
+            color: var(--black);
+            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+        }
+        .testimonial-avatar {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.75rem;
+            color: var(--gray);
+            flex-shrink: 0;
+        }
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.9375rem;
+            color: var(--black);
+        }
+        .testimonial-role {
+            font-size: 0.8125rem;
+            color: var(--gray-muted);
+        }
+        .testimonial-stat {
+            flex-shrink: 0;
+            text-align: right;
+            padding-top: 1rem;
+        }
+        .testimonial-stat-number {
+            font-family: 'Rokkitt', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--black);
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 0.375rem;
+        }
+        .testimonial-stat-label {
+            font-size: 0.75rem;
+            color: var(--gray-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+
+        /* ===================== RESULTS SECTION ===================== */
+        .results {
+            padding: 3rem 2.5rem 4rem;
+        }
+        .results-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .results-header {
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+        .results-header h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+        .results-header p {
+            font-size: 1.0625rem;
+            color: var(--gray);
+            line-height: 1.75;
+        }
+        /* ===================== RESULTS CARDS ===================== */
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+        .results-card {
+            background: var(--surface);
+            border: 1px solid var(--gray-light);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.15);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .results-card:hover {
+            border-color: transparent;
+            box-shadow: 5px 5px 0px #0ea5e9;
+        }
+        .results-card-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .results-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        .results-card p {
+            font-size: 0.9375rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        .results-card-stat {
+            font-family: 'Rokkitt', serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--black);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.25rem;
+        }
+        .results-card-stat-label {
+            font-size: 0.8125rem;
+            color: var(--gray-muted);
+            margin-bottom: 1rem;
+        }
+
+        /* ===================== CASE STUDY ===================== */
+        .case-study { padding: 0 2.5rem 5rem; }
+        .case-study-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--surface);
+            border: 1px solid var(--gray-light);
+            border-radius: 16px;
+            padding: 4.5rem 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.15);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .case-study-inner:hover {
+            border-color: transparent;
+            box-shadow: 5px 5px 0px #0ea5e9;
+        }
+        .case-study-text { max-width: 540px; }
+        .case-study-label {
+            font-family: 'Rokkitt', serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+        .case-study-company {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--black);
+            margin-bottom: 1.25rem;
+            line-height: 1.1;
+        }
+        .case-study-desc {
+            font-size: 1.0625rem;
+            color: var(--gray);
+            line-height: 1.75;
+        }
+        .case-study-highlight {
+            flex-shrink: 0;
+            text-align: center;
+            padding: 2.5rem 3rem;
+            background: var(--black);
+            border-radius: 12px;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.15);
+        }
+        .case-study-amount {
+            font-family: 'Rokkitt', serif;
+            font-size: clamp(3.5rem, 7vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .case-study-amount-label {
+            font-size: 0.8125rem;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        /* ===================== CTA ===================== */
+        .cta { padding: 2rem 2.5rem 6rem; }
+        .cta-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+        .cta h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            color: var(--black);
+            line-height: 1.2;
+        }
+        .cta p {
+            font-size: 1.0625rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        .cta-btn {
+            font-family: 'Space Mono', monospace;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            background: var(--black);
+            color: var(--white);
+            padding: 1.125rem 2.5rem;
+            text-decoration: none;
+            transition: background 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+        .cta-btn::after { content: "\203A"; font-size: 1.2rem; line-height: 1; }
+        .cta-btn:hover { background: var(--gray-dark); }
+        
+        /* ===================== FOOTER ===================== */
+        .page-footer {
+            border-top: 1px solid var(--gray-rule);
+            padding: 2.5rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-logo {
+            text-decoration: none;
+        }
+        .footer-text { font-size: 0.8125rem; color: var(--gray-muted); }
+        .footer-link {
+            font-size: 0.875rem;
+            color: var(--gray-dark);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-link:hover { color: var(--accent); }
+        
+        /* ===================== ANIMATIONS ===================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .fade-in-left.visible { opacity: 1; transform: translateX(0); }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .fade-in-right.visible { opacity: 1; transform: translateX(0); }
+        
+        .pillar.fade-in:nth-child(1) { transition-delay: 0s; }
+        .pillar.fade-in:nth-child(2) { transition-delay: 0.15s; }
+        .pillar.fade-in:nth-child(3) { transition-delay: 0.3s; }
+
+        .stat-item.fade-in:nth-child(1) { transition-delay: 0s; }
+        .stat-item.fade-in:nth-child(2) { transition-delay: 0.12s; }
+        .stat-item.fade-in:nth-child(3) { transition-delay: 0.24s; }
+        
+        .hero-visual {
+            opacity: 0;
+            transform: scale(0.96);
+            animation: heroEntrance 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.15s forwards;
+        }
+        @keyframes heroEntrance { to { opacity: 1; transform: scale(1); } }
+        
+        .headline-box {
+            opacity: 0;
+            animation: fadeInUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.5s forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translate(-50%, -40%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in, .fade-in-left, .fade-in-right { opacity: 1; transform: none; transition: none; }
+            .hero-visual { opacity: 1; transform: none; animation: none; }
+            .headline-box { opacity: 1; transform: translate(-50%, -50%); animation: none; }
+            .chrome-hover::before { animation: none; }
+        }
+        
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 1000px) {
+            .pillars-grid { grid-template-columns: 1fr; max-width: 480px; }
+            .pillars-header { flex-direction: column; align-items: flex-start; }
+            .pillars-header p { text-align: left; }
+            .case-study-inner { flex-direction: column; text-align: center; padding: 3rem 2rem; }
+            .results-grid { grid-template-columns: 1fr; }
+            .case-study-highlight { padding: 2rem 2.5rem; }
+            .case-study-text { max-width: 100%; }
+            .testimonial-content { flex-direction: column; gap: 2rem; }
+            .testimonial-stat { text-align: left; }
+            .stats-bar-inner { grid-template-columns: 1fr; max-width: 360px; }
+        }
+        @media (max-width: 900px) {
+            .hero-visual { width: 500px; height: 380px; }
+            .hero-headline { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
+            .page-frame { border-left: none; border-right: none; }
+            .header-inner { border-left: none; border-right: none; }
+            .nav-links { gap: 1rem; }
+            .nav-link { display: none; }
+        }
+        @media (max-width: 600px) {
+            .hero-visual { width: 320px; height: 260px; }
+            .hero-headline { font-size: 0.75rem; }
+            .page-footer { flex-direction: column; gap: 1rem; text-align: center; }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <span class="logo-text">SPUR INTE</span><img src="boot.png" alt="L" class="logo-boot" />
-      </div>
-      <a href="contact.html" class="cta-btn">Get In Touch</a>
+        <div class="header-inner">
+            <a href="#" class="logo spurintel-logo">
+                <span class="spurintel-logo-text">SpurIntel</span>
+                <svg class="spurintel-logo-rose" viewBox="-34 -34 68 68" fill="none" stroke-linejoin="round" aria-hidden="true">
+                    <path stroke="currentColor" stroke-width="0.25" stroke-opacity="0.7" d="M 0.00 0.00 L 22.89 21.35 L 0.91 12.98 L 16.29 -20.12 L 23.55 -3.31 L -13.11 -9.18 L -6.33 -29.77 L -1.72 2.87 L -30.59 8.77 L -8.81 -4.49 L 9.48 26.04 L -8.37 19.71 L 17.18 -7.65 L 27.64 9.52 L -3.12 -5.87 L 8.28 -30.91 L 5.64 -3.53 L -28.70 -5.58 L -11.06 -15.22 L -2.61 21.25 L -21.23 17.81 L 9.87 0.52 L 22.11 22.89 L 0.06 3.34 L 20.36 -22.62 L 15.94 -1.39 L -18.74 -14.64 L -4.05 -25.57 L -7.28 10.79 L -30.50 7.04 L -0.00 -0.00 L 9.15 29.93 L -5.71 11.70 L 24.17 -9.28 L 22.05 8.91 L -6.76 -14.50 L 9.40 -28.94 L -2.93 1.62 L -30.88 -7.70 L -5.39 -8.29 L -4.81 27.29 L -17.10 12.89 L 18.71 1.97 L 19.18 22.06 L 0.23 -6.65 L 22.63 -22.63 L 6.65 -0.23 L -22.06 -19.18 L -1.97 -18.71 L -12.89 17.10 L -27.29 4.81 L 8.29 5.39 L 7.70 30.88 L -1.62 2.93 L 28.94 -9.40 L 14.50 6.76 L -8.91 -22.05 L 9.28 -24.17 L -11.70 5.71 L -29.93 -9.15 L -0.00 -0.00 L -7.04 30.50 L -10.79 7.28 L 25.57 4.05 L 14.64 18.74 L 1.39 -15.94 L 22.62 -20.36 L -3.34 -0.06 L -22.89 -22.11 L -0.52 -9.87 L -17.81 21.23 L -21.25 2.61 L 15.22 11.06 L 5.58 28.70 L 3.53 -5.64 L 30.91 -8.28 L 5.87 3.12 L -9.52 -27.64 L 7.65 -17.18 L -19.71 8.37 L -26.04 -9.48 L 4.49 8.81 L -8.77 30.59 L -2.87 1.72 L 29.77 6.33 L 9.18 13.11 L 3.31 -23.55 L 20.12 -16.29 L -12.98 -0.91 L -21.35 -22.89 L -0.00 -0.00 L -21.35 22.89 L -12.98 0.91 L 20.12 16.29 L 3.31 23.55 L 9.18 -13.11 L 29.77 -6.33 L -2.87 -1.72 L -8.77 -30.59 L 4.49 -8.81 L -26.04 9.48 L -19.71 -8.37 L 7.65 17.18 L -9.52 27.64 L 5.87 -3.12 L 30.91 8.28 L 3.53 5.64 L 5.58 -28.70 L 15.22 -11.06 L -21.25 -2.61 L -17.81 -21.23 L -0.52 9.87 L -22.89 22.11 L -3.34 0.06 L 22.62 20.36 L 1.39 15.94 L 14.64 -18.74 L 25.57 -4.05 L -10.79 -7.28 L -7.04 -30.50 L 0.00 -0.00 L -29.93 9.15 L -11.70 -5.71 L 9.28 24.17 L -8.91 22.05 L 14.50 -6.76 L 28.94 9.40 L -1.62 -2.93 L 7.70 -30.88 L 8.29 -5.39 L -27.29 -4.81 L -12.89 -17.10 L -1.97 18.71 L -22.06 19.18 L 6.65 0.23 L 22.63 22.63 L 0.23 6.65 L 19.18 -22.06 L 18.71 -1.97 L -17.10 -12.89 L -4.81 -27.29 L -5.39 8.29 L -30.88 7.70 L -2.93 -1.62 L 9.40 28.94 L -6.76 14.50 L 22.05 -8.91 L 24.17 9.28 L -5.71 -11.70 L 9.15 -29.93 L 0.00 -0.00 L -30.50 -7.04 L -7.28 -10.79 L -4.05 25.57 L -18.74 14.64 L 15.94 1.39 L 20.36 22.62 L 0.06 -3.34 L 22.11 -22.89 L 9.87 -0.52 L -21.23 -17.81 L -2.61 -21.25 L -11.06 15.22 L -28.70 5.58 L 5.64 3.53 L 8.28 30.91 L -3.12 5.87 L 27.64 -9.52 L 17.18 7.65 L -8.37 -19.71 L 9.48 -26.04 L -8.81 4.49 L -30.59 -8.77 L -1.72 -2.87 L -6.33 29.77 L -13.11 9.18 L 23.55 3.31 L 16.29 20.12 L 0.91 -12.98 L 22.89 -21.35 L 0.00 -0.00 L -22.89 -21.35 L -0.91 -12.98 L -16.29 20.12 L -23.55 3.31 L 13.11 9.18 L 6.33 29.77 L 1.72 -2.87 L 30.59 -8.77 L 8.81 4.49 L -9.48 -26.04 L 8.37 -19.71 L -17.18 7.65 L -27.64 -9.52 L 3.12 5.87 L -8.28 30.91 L -5.64 3.53 L 28.70 5.58 L 11.06 15.22 L 2.61 -21.25 L 21.23 -17.81 L -9.87 -0.52 L -22.11 -22.89 L -0.06 -3.34 L -20.36 22.62 L -15.94 1.39 L 18.74 14.64 L 4.05 25.57 L 7.28 -10.79 L 30.50 -7.04 L 0.00 0.00 L -9.15 -29.93 L 5.71 -11.70 L -24.17 9.28 L -22.05 -8.91 L 6.76 14.50 L -9.40 28.94 L 2.93 -1.62 L 30.88 7.70 L 5.39 8.29 L 4.81 -27.29 L 17.10 -12.89 L -18.71 -1.97 L -19.18 -22.06 L -0.23 6.65 L -22.63 22.63 L -6.65 0.23 L 22.06 19.18 L 1.97 18.71 L 12.89 -17.10 L 27.29 -4.81 L -8.29 -5.39 L -7.70 -30.88 L 1.62 -2.93 L -28.94 9.40 L -14.50 -6.76 L 8.91 22.05 L -9.28 24.17 L 11.70 -5.71 L 29.93 9.15 L 0.00 0.00 L 7.04 -30.50 L 10.79 -7.28 L -25.57 -4.05 L -14.64 -18.74 L -1.39 15.94 L -22.62 20.36 L 3.34 0.06 L 22.89 22.11 L 0.52 9.87 L 17.81 -21.23 L 21.25 -2.61 L -15.22 -11.06 L -5.58 -28.70 L -3.53 5.64 L -30.91 8.28 L -5.87 -3.12 L 9.52 27.64 L -7.65 17.18 L 19.71 -8.37 L 26.04 9.48 L -4.49 -8.81 L 8.77 -30.59 L 2.87 -1.72 L -29.77 -6.33 L -9.18 -13.11 L -3.31 23.55 L -20.12 16.29 L 12.98 0.91 L 21.35 22.89 L 0.00 0.00 L 21.35 -22.89 L 12.98 -0.91 L -20.12 -16.29 L -3.31 -23.55 L -9.18 13.11 L -29.77 6.33 L 2.87 1.72 L 8.77 30.59 L -4.49 8.81 L 26.04 -9.48 L 19.71 8.37 L -7.65 -17.18 L 9.52 -27.64 L -5.87 3.12 L -30.91 -8.28 L -3.53 -5.64 L -5.58 28.70 L -15.22 11.06 L 21.25 2.61 L 17.81 21.23 L 0.52 -9.87 L 22.89 -22.11 L 3.34 -0.06 L -22.62 -20.36 L -1.39 -15.94 L -14.64 18.74 L -25.57 4.05 L 10.79 7.28 L 7.04 30.50 L -0.00 0.00 L 29.93 -9.15 L 11.70 5.71 L -9.28 -24.17 L 8.91 -22.05 L -14.50 6.76 L -28.94 -9.40 L 1.62 2.93 L -7.70 30.88 L -8.29 5.39 L 27.29 4.81 L 12.89 17.10 L 1.97 -18.71 L 22.06 -19.18 L -6.65 -0.23 L -22.63 -22.63 L -0.23 -6.65 L -19.18 22.06 L -18.71 1.97 L 17.10 12.89 L 4.81 27.29 L 5.39 -8.29 L 30.88 -7.70 L 2.93 1.62 L -9.40 -28.94 L 6.76 -14.50 L -22.05 8.91 L -24.17 -9.28 L 5.71 11.70 L -9.15 29.93 L -0.00 0.00 L 30.50 7.04 L 7.28 10.79 L 4.05 -25.57 L 18.74 -14.64 L -15.94 -1.39 L -20.36 -22.62 L -0.06 3.34 L -22.11 22.89 L -9.87 0.52 L 21.23 17.81 L 2.61 21.25 L 11.06 -15.22 L 28.70 -5.58 L -5.64 -3.53 L -8.28 -30.91 L 3.12 -5.87 L -27.64 9.52 L -17.18 -7.65 L 8.37 19.71 L -9.48 26.04 L 8.81 -4.49 L 30.59 8.77 L 1.72 2.87 L 6.33 -29.77 L 13.11 -9.18 L -23.55 -3.31 L -16.29 -20.12 L -0.91 12.98 L -22.89 21.35 L -0.00 0.00 Z"/>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#results" class="nav-link">Results</a>
+                <a href="contact.html" class="nav-cta">Get Started</a>
+            </div>
+        </div>
     </header>
 
-    <section class="hero">
-      <h1>Accelerate Outreach</h1>
-    </section>
+    <div class="page-frame">
+    
+    <div class="hero-section">
+        <section class="hero">
+            <div class="hero-visual" id="hero-visual">
+                <canvas id="arrows-canvas"></canvas>
+                <div class="headline-box">
+                    <h1 class="hero-headline">We Research. We Send. You Close.</h1>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="content-area">
+    
+        <section class="hook fade-in">
+            <div class="hook-inner">
+                <div class="hook-accent"></div>
+                <h2>Your Sales Team Should Be Closing, Not Researching.</h2>
+                <p>SpurIntel builds every layer of your outbound: targeted prospect lists, deep company research, and personalized multi-channel outreach. Buy the piece you need, or hand us the whole pipeline.</p>
+                <p class="hook-tagline">No tools to learn. No manual work required. No headcount to manage.<br><strong>You point. We execute.</strong></p>
+            </div>
+        </section>
 
-    <section class="content">
-      <div class="intro">
-        <div class="intro-text">
-          <p class="hook">Outreach is the wild west.<span> Don't miss your shot.</span></p>
-          <p class="description">
-            AI-powered outreach that turns hours of research into ready-to-send campaigns. Not templates. Not mail merge. Genuine personalization that gets responses.
-          </p>
-        </div>
-      </div>
+        <section class="stats-bar">
+            <div class="stats-bar-inner">
+                <div class="stat-item chrome-hover fade-in">
+                    <div class="stat-item-number">100%</div>
+                    <div class="stat-item-label">Done for You</div>
+                </div>
+                <div class="stat-item chrome-hover fade-in">
+                    <div class="stat-item-number">10–15%</div>
+                    <div class="stat-item-label">Reply Rate</div>
+                </div>
+                <div class="stat-item chrome-hover fade-in">
+                    <div class="stat-item-number">50+ hrs</div>
+                    <div class="stat-item-label">Saved Per 50-Company Campaign</div>
+                </div>
+            </div>
+        </section>
 
-      <div class="section">
-        <h2>What We Do</h2>
-        <p>
-          Spur Intel builds custom AI workflows that research target accounts, identify the right buyers, and generate personalized outreach. Every message is tailored to the recipient based on deep company and contact research.
-        </p>
-        <p>
-          You tell us who you want to reach. We handle the research, contact identification, and personalized messaging. Within days, you have outreach ready to go.
-        </p>
-      </div>
+        <hr class="section-divider">
+        
+        <section class="pillars" id="how-it-works">
+            <div class="pillars-header">
+                <h2 class="fade-in-left">From cold prospects to warm replies in three simple steps.</h2>
+                <p class="fade-in-right">Every campaign is research-driven, custom-built, and designed to start real conversations.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar chrome-hover fade-in">
+                    <div class="pillar-visual">
+                        <canvas id="research-canvas" width="320" height="220"></canvas>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="pillar-step">01</div>
+                        <h3>We Research.</h3>
+                        <p>Deep account intelligence on every target company. We identify decision-makers, research company context, and build comprehensive dossiers with account-specific value props. Not generic templates. Genuine personalization backed by 50+ data points per prospect.</p>
+                    </div>
+                </div>
+                
+                <div class="pillar chrome-hover fade-in">
+                    <div class="pillar-visual">
+                        <canvas id="config-canvas" width="320" height="220"></canvas>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="pillar-step">02</div>
+                        <h3>We Send.</h3>
+                        <p>Multi-channel execution on your behalf. We send personalized emails and LinkedIn messages using our proprietary AI trained on elite B2B sales copy. Your prospects receive outreach that feels individually researched, because it is.</p>
+                    </div>
+                </div>
+                
+                <div class="pillar chrome-hover fade-in">
+                    <div class="pillar-visual">
+                        <canvas id="controlled-arrows-canvas" width="320" height="220"></canvas>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="pillar-step">03</div>
+                        <h3>You Close.</h3>
+                        <p>Pre-qualified warm replies delivered to your inbox. We handle everything from cold prospect to engaged lead. You focus exclusively on what matters: having conversations with buyers who already understand why you're relevant.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="section">
-        <h2>Getting Started</h2>
-        <p>
-          Before campaigns start flowing, we build a system tailored to your business. This one-time setup typically takes 2-3 weeks:
-        </p>
-        <p>
-          <span class="emphasis">Kickoff session</span> — deep dive on your ICP, target personas, positioning, and messaging tone.
-          <span class="emphasis">Custom workflow builds</span> — AI research and personalization pipelines configured for your market.
-          <span class="emphasis">Messaging frameworks</span> — pain points, value props, and hooks mapped to each persona.
-          <span class="emphasis">Testing and calibration</span> — sample outputs for your review before we go live.
-        </p>
-        <p>
-          Once setup is complete, new campaigns spin up in days. You point, we execute.
-        </p>
-      </div>
+        <section class="testimonial">
+            <div class="testimonial-inner fade-in">
+                <div class="testimonial-bracket-bl"></div>
+                <div class="testimonial-bracket-br"></div>
+                <div class="testimonial-content">
+                    <div class="testimonial-quote">
+                        <p class="testimonial-text">&ldquo;SPURINTEL didn't just send emails for us. They learned our product, our market, and our voice. The outreach they built felt like it came from our own team. The results spoke for themselves.&rdquo;</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">CK</div>
+                            <div>
+                                <div class="testimonial-name">Cooper Kennedy</div>
+                                <div class="testimonial-role">Operations Manager, MaiaEdge</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="section">
-        <h2>How It Works</h2>
-        <div class="how-it-works">
-          <div class="step">
-            <div class="step-number">01</div>
-            <div class="step-title">You Point</div>
-            <div class="step-desc">Send a target list, define your ICP, or name the market you want to crack.</div>
-          </div>
-          <div class="step">
-            <div class="step-number">02</div>
-            <div class="step-title">We Research</div>
-            <div class="step-desc">AI workflows dig into each account and contact. Real intelligence, not scraped data.</div>
-          </div>
-          <div class="step">
-            <div class="step-number">03</div>
-            <div class="step-title">You Send</div>
-            <div class="step-desc">Review, approve, and send from your own tools. Once we're live, new campaigns turn around in days.</div>
-          </div>
-        </div>
-      </div>
+        <hr class="section-divider">
 
-      <div class="section">
-        <h2>What You Get</h2>
-        <p>Every campaign delivers a complete outreach package:</p>
-        <div class="deliverables">
-          <div class="deliverable">
-            <div class="deliverable-title">Target Account List</div>
-            <div class="deliverable-desc">Filtered and prioritized with fit rationale for each company</div>
-          </div>
-          <div class="deliverable">
-            <div class="deliverable-title">Account Briefs</div>
-            <div class="deliverable-desc">Research summary per company so you have context before outreach</div>
-          </div>
-          <div class="deliverable">
-            <div class="deliverable-title">Verified Contacts</div>
-            <div class="deliverable-desc">Decision makers at each company with confirmed emails</div>
-          </div>
-          <div class="deliverable">
-            <div class="deliverable-title">Personalized Outreach</div>
-            <div class="deliverable-desc">Custom email and LinkedIn message for every contact</div>
-          </div>
-        </div>
-      </div>
+        <section class="results" id="results">
+            <div class="results-inner">
+                <div class="results-header fade-in">
+                    <h2>Proven Results in Your Industry</h2>
+                    <p>Our proprietary system consistently delivers reply rates 10x higher than the industry average of 1–3%. The difference is research depth. Every message demonstrates you've done your homework.</p>
+                </div>
+                <div class="results-grid">
+                    <div class="results-card chrome-hover fade-in">
+                        <div class="results-card-label">Time Savings</div>
+                        <div class="results-card-stat">3–5 days</div>
+                        <div class="results-card-stat-label">campaign turnaround</div>
+                        <p>What takes agencies 4–6 weeks, we deliver in days. No hiring, no ramp time, no management overhead. That's VP Sales time redirected from research to revenue.</p>
+                    </div>
+                    <div class="results-card chrome-hover fade-in">
+                        <div class="results-card-label">Continuous Improvement</div>
+                        <h3>The System Gets Smarter Every Month</h3>
+                        <p>Unlike project-based work, our retainer model means we learn which messaging resonates, refine persona targeting, and compound results over time. Month 12 performance is dramatically better than Month 1. Agencies starting from scratch each time can never deliver that.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="section">
-        <h2>Proof It Works</h2>
-        <div class="stats-highlight">
-          <span class="stat-number">10-15%</span>
-          <span class="stat-text">reply rates on cold outreach, compared to the 1-3% industry average. The difference is research depth.</span>
-        </div>
-      </div>
+        <section class="case-study">
+            <div class="case-study-inner chrome-hover fade-in">
+                <div class="case-study-text">
+                    <div class="case-study-label">Trusted by</div>
+                    <div class="case-study-company">MaiaEdge</div>
+                    <p class="case-study-desc">We handled all of the sales outreach for MaiaEdge's Series A, from prospect research to personalized messaging. Every email and touchpoint was built to convert.</p>
+                </div>
+                <div class="case-study-highlight">
+                    <div class="case-study-amount">$20M</div>
+                    <div class="case-study-amount-label">Series A Raised</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta" id="get-started">
+            <div class="cta-inner fade-in">
+                <h2>Ready to Stop Researching and Start Closing?</h2>
+                <p>Book a 20-minute call to see if SpurIntel is right for your team. No pressure, no obligation. Just an honest conversation about your goals.</p>
+                <a href="contact.html" class="cta-btn">Schedule Discovery Call</a>
+            </div>
+        </section>
 
-      <div class="section">
-        <h2>The System Gets Smarter</h2>
-        <p>
-          This isn't a one-off project. The more we work together, the better the results:
-        </p>
-        <p>
-          <span class="emphasis">Messaging sharpens</span> as we learn which angles resonate with your buyers.
-          <span class="emphasis">Segments get clearer</span> with deeper understanding of your ICP.
-          <span class="emphasis">Turnaround gets faster</span> once the system knows your market.
-          <span class="emphasis">Results compound</span> because we're not starting from scratch every time.
-        </p>
-      </div>
-    </section>
+        <footer class="page-footer">
+            <a href="#" class="footer-logo spurintel-logo spurintel-logo--sm">
+                <span class="spurintel-logo-text">SpurIntel</span>
+                <svg class="spurintel-logo-rose" viewBox="-34 -34 68 68" fill="none" stroke-linejoin="round" aria-hidden="true">
+                    <path stroke="currentColor" stroke-width="0.25" stroke-opacity="0.7" d="M 0.00 0.00 L 22.89 21.35 L 0.91 12.98 L 16.29 -20.12 L 23.55 -3.31 L -13.11 -9.18 L -6.33 -29.77 L -1.72 2.87 L -30.59 8.77 L -8.81 -4.49 L 9.48 26.04 L -8.37 19.71 L 17.18 -7.65 L 27.64 9.52 L -3.12 -5.87 L 8.28 -30.91 L 5.64 -3.53 L -28.70 -5.58 L -11.06 -15.22 L -2.61 21.25 L -21.23 17.81 L 9.87 0.52 L 22.11 22.89 L 0.06 3.34 L 20.36 -22.62 L 15.94 -1.39 L -18.74 -14.64 L -4.05 -25.57 L -7.28 10.79 L -30.50 7.04 L -0.00 -0.00 L 9.15 29.93 L -5.71 11.70 L 24.17 -9.28 L 22.05 8.91 L -6.76 -14.50 L 9.40 -28.94 L -2.93 1.62 L -30.88 -7.70 L -5.39 -8.29 L -4.81 27.29 L -17.10 12.89 L 18.71 1.97 L 19.18 22.06 L 0.23 -6.65 L 22.63 -22.63 L 6.65 -0.23 L -22.06 -19.18 L -1.97 -18.71 L -12.89 17.10 L -27.29 4.81 L 8.29 5.39 L 7.70 30.88 L -1.62 2.93 L 28.94 -9.40 L 14.50 6.76 L -8.91 -22.05 L 9.28 -24.17 L -11.70 5.71 L -29.93 -9.15 L -0.00 -0.00 L -7.04 30.50 L -10.79 7.28 L 25.57 4.05 L 14.64 18.74 L 1.39 -15.94 L 22.62 -20.36 L -3.34 -0.06 L -22.89 -22.11 L -0.52 -9.87 L -17.81 21.23 L -21.25 2.61 L 15.22 11.06 L 5.58 28.70 L 3.53 -5.64 L 30.91 -8.28 L 5.87 3.12 L -9.52 -27.64 L 7.65 -17.18 L -19.71 8.37 L -26.04 -9.48 L 4.49 8.81 L -8.77 30.59 L -2.87 1.72 L 29.77 6.33 L 9.18 13.11 L 3.31 -23.55 L 20.12 -16.29 L -12.98 -0.91 L -21.35 -22.89 L -0.00 -0.00 L -21.35 22.89 L -12.98 0.91 L 20.12 16.29 L 3.31 23.55 L 9.18 -13.11 L 29.77 -6.33 L -2.87 -1.72 L -8.77 -30.59 L 4.49 -8.81 L -26.04 9.48 L -19.71 -8.37 L 7.65 17.18 L -9.52 27.64 L 5.87 -3.12 L 30.91 8.28 L 3.53 5.64 L 5.58 -28.70 L 15.22 -11.06 L -21.25 -2.61 L -17.81 -21.23 L -0.52 9.87 L -22.89 22.11 L -3.34 0.06 L 22.62 20.36 L 1.39 15.94 L 14.64 -18.74 L 25.57 -4.05 L -10.79 -7.28 L -7.04 -30.50 L 0.00 -0.00 L -29.93 9.15 L -11.70 -5.71 L 9.28 24.17 L -8.91 22.05 L 14.50 -6.76 L 28.94 9.40 L -1.62 -2.93 L 7.70 -30.88 L 8.29 -5.39 L -27.29 -4.81 L -12.89 -17.10 L -1.97 18.71 L -22.06 19.18 L 6.65 0.23 L 22.63 22.63 L 0.23 6.65 L 19.18 -22.06 L 18.71 -1.97 L -17.10 -12.89 L -4.81 -27.29 L -5.39 8.29 L -30.88 7.70 L -2.93 -1.62 L 9.40 28.94 L -6.76 14.50 L 22.05 -8.91 L 24.17 9.28 L -5.71 -11.70 L 9.15 -29.93 L 0.00 -0.00 L -30.50 -7.04 L -7.28 -10.79 L -4.05 25.57 L -18.74 14.64 L 15.94 1.39 L 20.36 22.62 L 0.06 -3.34 L 22.11 -22.89 L 9.87 -0.52 L -21.23 -17.81 L -2.61 -21.25 L -11.06 15.22 L -28.70 5.58 L 5.64 3.53 L 8.28 30.91 L -3.12 5.87 L 27.64 -9.52 L 17.18 7.65 L -8.37 -19.71 L 9.48 -26.04 L -8.81 4.49 L -30.59 -8.77 L -1.72 -2.87 L -6.33 29.77 L -13.11 9.18 L 23.55 3.31 L 16.29 20.12 L 0.91 -12.98 L 22.89 -21.35 L 0.00 -0.00 L -22.89 -21.35 L -0.91 -12.98 L -16.29 20.12 L -23.55 3.31 L 13.11 9.18 L 6.33 29.77 L 1.72 -2.87 L 30.59 -8.77 L 8.81 4.49 L -9.48 -26.04 L 8.37 -19.71 L -17.18 7.65 L -27.64 -9.52 L 3.12 5.87 L -8.28 30.91 L -5.64 3.53 L 28.70 5.58 L 11.06 15.22 L 2.61 -21.25 L 21.23 -17.81 L -9.87 -0.52 L -22.11 -22.89 L -0.06 -3.34 L -20.36 22.62 L -15.94 1.39 L 18.74 14.64 L 4.05 25.57 L 7.28 -10.79 L 30.50 -7.04 L 0.00 0.00 L -9.15 -29.93 L 5.71 -11.70 L -24.17 9.28 L -22.05 -8.91 L 6.76 14.50 L -9.40 28.94 L 2.93 -1.62 L 30.88 7.70 L 5.39 8.29 L 4.81 -27.29 L 17.10 -12.89 L -18.71 -1.97 L -19.18 -22.06 L -0.23 6.65 L -22.63 22.63 L -6.65 0.23 L 22.06 19.18 L 1.97 18.71 L 12.89 -17.10 L 27.29 -4.81 L -8.29 -5.39 L -7.70 -30.88 L 1.62 -2.93 L -28.94 9.40 L -14.50 -6.76 L 8.91 22.05 L -9.28 24.17 L 11.70 -5.71 L 29.93 9.15 L 0.00 0.00 L 7.04 -30.50 L 10.79 -7.28 L -25.57 -4.05 L -14.64 -18.74 L -1.39 15.94 L -22.62 20.36 L 3.34 0.06 L 22.89 22.11 L 0.52 9.87 L 17.81 -21.23 L 21.25 -2.61 L -15.22 -11.06 L -5.58 -28.70 L -3.53 5.64 L -30.91 8.28 L -5.87 -3.12 L 9.52 27.64 L -7.65 17.18 L 19.71 -8.37 L 26.04 9.48 L -4.49 -8.81 L 8.77 -30.59 L 2.87 -1.72 L -29.77 -6.33 L -9.18 -13.11 L -3.31 23.55 L -20.12 16.29 L 12.98 0.91 L 21.35 22.89 L 0.00 0.00 L 21.35 -22.89 L 12.98 -0.91 L -20.12 -16.29 L -3.31 -23.55 L -9.18 13.11 L -29.77 6.33 L 2.87 1.72 L 8.77 30.59 L -4.49 8.81 L 26.04 -9.48 L 19.71 8.37 L -7.65 -17.18 L 9.52 -27.64 L -5.87 3.12 L -30.91 -8.28 L -3.53 -5.64 L -5.58 28.70 L -15.22 11.06 L 21.25 2.61 L 17.81 21.23 L 0.52 -9.87 L 22.89 -22.11 L 3.34 -0.06 L -22.62 -20.36 L -1.39 -15.94 L -14.64 18.74 L -25.57 4.05 L 10.79 7.28 L 7.04 30.50 L -0.00 0.00 L 29.93 -9.15 L 11.70 5.71 L -9.28 -24.17 L 8.91 -22.05 L -14.50 6.76 L -28.94 -9.40 L 1.62 2.93 L -7.70 30.88 L -8.29 5.39 L 27.29 4.81 L 12.89 17.10 L 1.97 -18.71 L 22.06 -19.18 L -6.65 -0.23 L -22.63 -22.63 L -0.23 -6.65 L -19.18 22.06 L -18.71 1.97 L 17.10 12.89 L 4.81 27.29 L 5.39 -8.29 L 30.88 -7.70 L 2.93 1.62 L -9.40 -28.94 L 6.76 -14.50 L -22.05 8.91 L -24.17 -9.28 L 5.71 11.70 L -9.15 29.93 L -0.00 0.00 L 30.50 7.04 L 7.28 10.79 L 4.05 -25.57 L 18.74 -14.64 L -15.94 -1.39 L -20.36 -22.62 L -0.06 3.34 L -22.11 22.89 L -9.87 0.52 L 21.23 17.81 L 2.61 21.25 L 11.06 -15.22 L 28.70 -5.58 L -5.64 -3.53 L -8.28 -30.91 L 3.12 -5.87 L -27.64 9.52 L -17.18 -7.65 L 8.37 19.71 L -9.48 26.04 L 8.81 -4.49 L 30.59 8.77 L 1.72 2.87 L 6.33 -29.77 L 13.11 -9.18 L -23.55 -3.31 L -16.29 -20.12 L -0.91 12.98 L -22.89 21.35 L -0.00 0.00 Z"/>
+                </svg>
+            </a>
+            <span class="footer-text">&copy; 2026 SpurIntel</span>
+        </footer>
 
-    <section id="contact">
-      <h2>Let's Talk</h2>
-      <p>
-        Ready to stop researching and start closing? Tell us who you want to reach.
-      </p>
-      <a href="contact.html" class="cta-btn">Get In Touch</a>
-    </section>
+    </div>
+    </div>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // ============ SCROLL ANIMATIONS (run first so content is visible) ============
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { root: null, rootMargin: '0px', threshold: 0.1 });
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
 
-    <script>
-      // Scroll animations
-      const sections = document.querySelectorAll('.section');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+        // ============ ANIMATED ARROWS (Hero) ============
+        const canvas = document.getElementById('arrows-canvas');
+        const ctx = canvas.getContext('2d');
+        const GRID = 6;
+        let W, H, CX, CY, CLEAR_W, CLEAR_H;
+
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            W = canvas.width = container.offsetWidth * 1.8;
+            H = canvas.height = container.offsetHeight * 1.6;
+            CX = W / 2; CY = H / 2;
+            CLEAR_W = W * 0.35; CLEAR_H = H * 0.08;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        function snap(v) { return Math.round(v / GRID) * GRID; }
+
+        const arrows = [];
+        const MAX = 40;
+        let spawnTimer = 0;
+        const SPAWN_INTERVAL = 2;
+
+        function spawnArrow() {
+            const angle = Math.random() * Math.PI * 2;
+            const speed = 3.0 + Math.random() * 2.0;
+            const maxLength = 80 + Math.random() * 100;
+            const curveType = Math.random();
+            let angularVel;
+            if (curveType < 0.3) angularVel = 0;
+            else if (curveType < 0.7) angularVel = (Math.random() > 0.5 ? 1 : -1) * (0.004 + Math.random() * 0.006);
+            else angularVel = (Math.random() > 0.5 ? 1 : -1) * (0.002 + Math.random() * 0.004);
+
+            const cos = Math.cos(angle), sin = Math.sin(angle);
+            const tx = cos !== 0 ? Math.abs(CLEAR_W / cos) : Infinity;
+            const ty = sin !== 0 ? Math.abs(CLEAR_H / sin) : Infinity;
+            const t = Math.min(tx, ty) + Math.random() * 10;
+
+            arrows.push({
+                originX: CX + cos * t, originY: CY + sin * t,
+                currentAngle: angle, angularVel, speed, maxLength, thickness: GRID,
+                opacity: 0.8 + Math.random() * 0.2,
+                life: 0, maxLife: 80 + Math.random() * 50,
+                path: [], totalArcLen: 0, pathLengths: [],
+            });
+        }
+
+        function drawArrow(a) {
+            const progress = a.life / a.maxLife;
+            const totalPts = a.path.length;
+            if (totalPts < 2) return;
+            let alpha;
+            if (progress < 0.12) alpha = (progress / 0.12) * a.opacity;
+            else if (progress > 0.6) alpha = ((1 - progress) / 0.4) * a.opacity;
+            else alpha = a.opacity;
+
+            const visibleStart = Math.max(0, a.totalArcLen - a.maxLength);
+            let startIdx = 0;
+            for (let i = 0; i < totalPts; i++) { if (a.pathLengths[i] >= visibleStart) { startIdx = i; break; } }
+
+            const visiblePts = [];
+            for (let i = startIdx; i < totalPts; i++) { visiblePts.push(a.path[i]); }
+            if (visiblePts.length < 2) return;
+
+            ctx.save();
+            ctx.globalAlpha = alpha;
+            ctx.strokeStyle = '#1a1a1a';
+            ctx.lineWidth = 1.8;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.beginPath();
+            ctx.moveTo(visiblePts[0].x, visiblePts[0].y);
+            for (let i = 1; i < visiblePts.length; i++) { ctx.lineTo(visiblePts[i].x, visiblePts[i].y); }
+            ctx.stroke();
+
+            const head = visiblePts[visiblePts.length - 1];
+            const prev = visiblePts[Math.max(0, visiblePts.length - 6)];
+            const tipAngle = Math.atan2(head.y - prev.y, head.x - prev.x);
+            const visibleLen = a.totalArcLen - visibleStart;
+            const headLen = Math.min(visibleLen * 0.15, 12);
+            if (headLen > 3) {
+                const spread = 0.35;
+                ctx.fillStyle = '#1a1a1a';
+                ctx.beginPath();
+                ctx.moveTo(head.x, head.y);
+                ctx.lineTo(head.x - Math.cos(tipAngle - spread) * headLen, head.y - Math.sin(tipAngle - spread) * headLen);
+                ctx.lineTo(head.x - Math.cos(tipAngle + spread) * headLen, head.y - Math.sin(tipAngle + spread) * headLen);
+                ctx.closePath();
+                ctx.fill();
+            }
+            ctx.restore();
+        }
+
+        let lastArrowTime = performance.now();
+        function animateArrows(now) {
+            const dt = Math.min((now - lastArrowTime) / 16.67, 3);
+            lastArrowTime = now;
+            ctx.clearRect(0, 0, W, H);
+            spawnTimer += dt;
+            if (spawnTimer >= SPAWN_INTERVAL && arrows.length < MAX) { spawnArrow(); spawnTimer = 0; }
+            for (let i = arrows.length - 1; i >= 0; i--) {
+                const a = arrows[i];
+                a.currentAngle += a.angularVel * dt;
+                const last = a.path.length > 0 ? a.path[a.path.length - 1] : { x: a.originX, y: a.originY };
+                const nx = last.x + Math.cos(a.currentAngle) * a.speed * dt;
+                const ny = last.y + Math.sin(a.currentAngle) * a.speed * dt;
+                a.totalArcLen += Math.hypot(nx - last.x, ny - last.y);
+                a.path.push({ x: nx, y: ny });
+                a.pathLengths.push(a.totalArcLen);
+                a.life += dt;
+                if (a.life >= a.maxLife) { arrows.splice(i, 1); continue; }
+                drawArrow(a);
+            }
+            requestAnimationFrame(animateArrows);
+        }
+        requestAnimationFrame(animateArrows);
+
+        // ============ MAURER ROSE (Pillar 1) ============
+        (function() {
+            const c = document.getElementById('research-canvas');
+            const cx = c.getContext('2d');
+            const W = 320, H = 220, CXR = W/2, CYR = H/2, R = 88;
+            const n = 4, d = 119;
+            let prog = 0, lastRoseTime = performance.now();
+            function pt(i) { const k = i * d * Math.PI / 180; const r = R * Math.sin(n * k); return { x: CXR + r * Math.cos(k), y: CYR + r * Math.sin(k) }; }
+            function anim(now) {
+                const dt = Math.min((now - lastRoseTime) / 16.67, 3); lastRoseTime = now;
+                cx.clearRect(0, 0, W, H);
+                cx.strokeStyle = '#d4d4d4'; cx.lineWidth = 0.5; cx.globalAlpha = 0.35;
+                cx.beginPath();
+                for (let i = 0; i <= 360; i++) { const k = i * Math.PI / 180; const r = R * Math.sin(n * k); const x = CXR + r * Math.cos(k), y = CYR + r * Math.sin(k); i === 0 ? cx.moveTo(x, y) : cx.lineTo(x, y); }
+                cx.stroke();
+                const count = Math.min(Math.floor(prog), 360);
+                if (count > 1) {
+                    cx.strokeStyle = '#1a1a1a'; cx.lineWidth = 0.8; cx.globalAlpha = 0.6;
+                    cx.beginPath(); const s = pt(0); cx.moveTo(s.x, s.y);
+                    for (let i = 1; i < count; i++) { const p = pt(i); cx.lineTo(p.x, p.y); } cx.stroke();
+                    if (count < 360) { const tip = pt(count); cx.globalAlpha = 0.9; cx.fillStyle = '#3494d4'; cx.beginPath(); cx.arc(tip.x, tip.y, 3, 0, Math.PI * 2); cx.fill(); }
+                }
+                cx.globalAlpha = 1; prog += 2.0 * dt; if (prog > 450) prog = 0;
+                requestAnimationFrame(anim);
+            }
+            requestAnimationFrame(anim);
+        })();
+
+        // ============ CONFIG VISUAL (Pillar 2) ============
+        (function() {
+            const c = document.getElementById('config-canvas');
+            const cx = c.getContext('2d');
+            const W = 320, H = 220, MX = W/2, MY = H/2;
+            const nodesDef = [
+                { x: MX, y: MY, r: 8, label: 'YOU', type: 'center' },
+                { x: MX-85, y: MY-52, r: 6, label: 'ICP', type: 'primary' },
+                { x: MX+82, y: MY-48, r: 6, label: 'HOOKS', type: 'primary' },
+                { x: MX-88, y: MY+44, r: 6, label: 'VOICE', type: 'primary' },
+                { x: MX+86, y: MY+50, r: 6, label: 'VALUE', type: 'primary' },
+                { x: MX-22, y: MY-78, r: 3, label: '', type: 'secondary' },
+                { x: MX+22, y: MY+76, r: 3, label: '', type: 'secondary' },
+                { x: MX+52, y: MY-74, r: 3, label: '', type: 'secondary' },
+                { x: MX-50, y: MY+70, r: 3, label: '', type: 'secondary' },
+            ];
+            const connections = [[0,1],[0,2],[0,3],[0,4],[1,5],[2,7],[3,8],[4,6],[0,5],[0,6],[0,7],[0,8],[1,3],[2,4],[5,7],[6,8]];
+            const particles = []; const MAX_PARTICLES = 12;
+            function spawnParticle() { const ci = Math.floor(Math.random()*connections.length); const [a,b] = connections[ci]; const rev = Math.random()>0.5; particles.push({ conn:ci, from:rev?b:a, to:rev?a:b, t:0, speed:0.015+Math.random()*0.01, size:1.5+Math.random()*1.5 }); }
+            const CYCLE=200, PAUSE=100, TOTAL=CYCLE+PAUSE; let frame=0, lastNetTime=performance.now();
+            function easeOut(t) { return 1-Math.pow(1-t,3); }
+            function anim(now) {
+                const dt = Math.min((now-lastNetTime)/16.67,3); lastNetTime=now;
+                cx.clearRect(0,0,W,H); frame=(frame+dt)%TOTAL;
+                const progress=Math.min(frame/CYCLE,1);
+                const nodeCount=Math.floor(easeOut(Math.min(progress*1.8,1))*nodesDef.length);
+                const connProg=Math.max(0,(progress-0.15)/0.85);
+                const connCount=Math.floor(easeOut(Math.min(connProg*1.5,1))*connections.length);
+                for(let i=0;i<connCount;i++){const[a,b]=connections[i];if(a>=nodeCount||b>=nodeCount)continue;const na=nodesDef[a],nb=nodesDef[b];const cl=Math.min((connProg*connections.length-i)*3,1);if(cl<=0)continue;const cp=easeOut(Math.max(0,Math.min(cl,1)));const ex=na.x+(nb.x-na.x)*cp,ey=na.y+(nb.y-na.y)*cp;const isPrimary=a===0&&b<=4;cx.globalAlpha=isPrimary?0.35*cp:0.15*cp;cx.strokeStyle='#1a1a1a';cx.lineWidth=isPrimary?1.2:0.8;cx.beginPath();cx.moveTo(na.x,na.y);cx.lineTo(ex,ey);cx.stroke();if(cp<0.92){cx.globalAlpha=0.7*(1-cp);cx.fillStyle='#3494d4';cx.beginPath();cx.arc(ex,ey,2,0,Math.PI*2);cx.fill();}}
+                if(progress>0.5){if(particles.length<MAX_PARTICLES&&Math.random()<0.06)spawnParticle();for(let i=particles.length-1;i>=0;i--){const p=particles[i];p.t+=p.speed*dt;if(p.t>1){particles.splice(i,1);continue;}const na=nodesDef[p.from],nb=nodesDef[p.to];const px=na.x+(nb.x-na.x)*p.t,py=na.y+(nb.y-na.y)*p.t;cx.globalAlpha=0.15;cx.fillStyle='#3494d4';cx.beginPath();cx.arc(px,py,p.size*3,0,Math.PI*2);cx.fill();cx.globalAlpha=0.8;cx.beginPath();cx.arc(px,py,p.size,0,Math.PI*2);cx.fill();for(let j=1;j<=3;j++){const tt=p.t-j*0.02;if(tt<0)break;cx.globalAlpha=0.3*(1-j/3);cx.beginPath();cx.arc(na.x+(nb.x-na.x)*tt,na.y+(nb.y-na.y)*tt,p.size*0.6,0,Math.PI*2);cx.fill();}}}
+                for(let i=0;i<nodeCount;i++){const nd=nodesDef[i];const nl=Math.min((progress*nodesDef.length-i)*4,1);if(nl<=0)continue;const s=easeOut(Math.max(0,Math.min(nl,1)));if(nd.type==='center'){const pulse=1+Math.sin(frame*0.04)*0.15;cx.globalAlpha=0.08*s;cx.fillStyle='#3494d4';cx.beginPath();cx.arc(nd.x,nd.y,24*s*pulse,0,Math.PI*2);cx.fill();cx.globalAlpha=0.15*s;cx.beginPath();cx.arc(nd.x,nd.y,14*s,0,Math.PI*2);cx.fill();cx.globalAlpha=0.9*s;cx.fillStyle='#1a1a1a';cx.beginPath();cx.arc(nd.x,nd.y,nd.r*s,0,Math.PI*2);cx.fill();cx.globalAlpha=0.8*s;cx.fillStyle='#3494d4';cx.beginPath();cx.arc(nd.x,nd.y,3.5*s,0,Math.PI*2);cx.fill();}else if(nd.type==='primary'){cx.globalAlpha=0.8*s;cx.fillStyle='#1a1a1a';cx.beginPath();cx.arc(nd.x,nd.y,nd.r*s,0,Math.PI*2);cx.fill();cx.globalAlpha=0.9*s;cx.fillStyle='#fafafa';cx.beginPath();cx.arc(nd.x,nd.y,2*s,0,Math.PI*2);cx.fill();}else{cx.globalAlpha=0.5*s;cx.fillStyle='#1a1a1a';cx.beginPath();cx.arc(nd.x,nd.y,nd.r*s,0,Math.PI*2);cx.fill();}if(nd.label&&s>0.6){cx.globalAlpha=(s-0.6)/0.4*0.6;cx.fillStyle='#1a1a1a';cx.font='600 7.5px Space Mono, monospace';cx.textAlign='center';cx.fillText(nd.label,nd.x,nd.y+nd.r+14);}}
+                if(progress>=1){const pulse=Math.sin(frame*0.03)*0.06+0.06;for(let i=0;i<4;i++){const[a,b]=connections[i];const na=nodesDef[a],nb=nodesDef[b];cx.globalAlpha=pulse;cx.strokeStyle='#3494d4';cx.lineWidth=1.5;cx.beginPath();cx.moveTo(na.x,na.y);cx.lineTo(nb.x,nb.y);cx.stroke();}}
+                cx.globalAlpha=1;requestAnimationFrame(anim);
+            }
+            requestAnimationFrame(anim);
+        })();
+
+        // ============ CONTROLLED ARROWS (Pillar 3) ============
+        (function() {
+            const c = document.getElementById('controlled-arrows-canvas');
+            const cx = c.getContext('2d');
+            const ROWS = 6, ROW_SPACING = 28, ARROW_LEN = 120, YOFF = 22;
+            const arr = [], checks = [];
+            for (let i = 0; i < ROWS; i++) arr.push({ x: -40 - i * 20, y: YOFF + i * ROW_SPACING, length: 0, maxLength: ARROW_LEN, speed: 2.2 + Math.random() * 0.6, opacity: 0.85, reachedEnd: false });
+
+            function drawLine(x0, y0, x1) {
+                cx.beginPath();
+                cx.moveTo(x0, y0);
+                cx.lineTo(x1, y0);
+                cx.stroke();
+            }
+            function drawArrowHead(x, y, size) {
+                cx.beginPath();
+                cx.moveTo(x, y);
+                cx.lineTo(x - size, y - size * 0.5);
+                cx.lineTo(x - size, y + size * 0.5);
+                cx.closePath();
+                cx.fill();
+            }
+            function drawCheck(x, y, alpha) {
+                cx.save();
+                cx.globalAlpha = alpha;
+                cx.strokeStyle = '#22c55e';
+                cx.lineWidth = 2.5;
+                cx.lineCap = 'round';
+                cx.lineJoin = 'round';
+                cx.beginPath();
+                cx.moveTo(x - 6, y);
+                cx.lineTo(x - 1, y + 5);
+                cx.lineTo(x + 7, y - 5);
+                cx.stroke();
+                cx.restore();
+            }
+
+            let lastCtrlTime = performance.now();
+            function animC(now) {
+                const dt = Math.min((now - lastCtrlTime) / 16.67, 3); lastCtrlTime = now;
+                cx.clearRect(0, 0, c.width, c.height);
+                for (const a of arr) {
+                    a.x += a.speed * dt;
+                    if (a.length < a.maxLength) a.length = Math.min(a.length + a.speed * dt, a.maxLength);
+                    if (!a.reachedEnd && a.x >= c.width - 35) { a.reachedEnd = true; checks.push({ x: c.width - 18, y: a.y, life: 60 }); }
+                    if (a.x - a.length > c.width + 10) { a.x = -40; a.length = 0; a.reachedEnd = false; }
+                    if (a.length > 2) {
+                        const headX = Math.min(a.x, c.width - 35);
+                        cx.save();
+                        cx.globalAlpha = a.opacity;
+                        cx.strokeStyle = '#1a1a1a';
+                        cx.fillStyle = '#1a1a1a';
+                        cx.lineWidth = 1.8;
+                        cx.lineCap = 'round';
+                        drawLine(headX - a.length, a.y, headX);
+                        drawArrowHead(headX, a.y, 8);
+                        cx.restore();
+                    }
+                }
+                for (let i = checks.length - 1; i >= 0; i--) {
+                    drawCheck(checks[i].x, checks[i].y, Math.min(1, checks[i].life / 20));
+                    checks[i].life -= dt;
+                    if (checks[i].life <= 0) checks.splice(i, 1);
+                }
+                requestAnimationFrame(animC);
+            }
+            requestAnimationFrame(animC);
+        })();
+
+        // ============ SMOOTH SCROLL FOR NAV LINKS ============
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
         });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      sections.forEach(section => observer.observe(section));
     </script>
-  </body>
+</body>
 </html>
