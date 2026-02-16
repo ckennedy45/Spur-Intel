@@ -168,7 +168,7 @@
 
         .content-area {
             position: relative;
-            z-index: 2;
+            z-index: 6;
             background: var(--bg);
         }
 
@@ -186,13 +186,31 @@
         .about-photo {
             flex-shrink: 0;
             width: 280px;
+            position: relative;
+            z-index: 6;
         }
         .about-photo img {
             width: 100%;
-            border-radius: 12px;
-            border: 1px solid var(--gray-light);
-            box-shadow: 5px 5px 0px rgba(0,0,0,0.15);
             display: block;
+            border-radius: 50%;
+        }
+        .about-photo-wrap {
+            position: relative;
+        }
+        .about-photo-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 3px solid #0ea5e9;
+            animation: border-glow 8s ease-in-out infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+        @keyframes border-glow {
+            0%, 100% { border-color: #0ea5e9; }
+            33% { border-color: #38bdf8; }
+            66% { border-color: #0a1e3d; }
         }
         .about-photo-caption {
             font-size: 0.75rem;
@@ -280,6 +298,11 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes chrome-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
         @media (prefers-reduced-motion: reduce) {
             .fade-in { opacity: 1; transform: none; transition: none; }
@@ -329,7 +352,9 @@
             <section class="about">
                 <div class="about-inner fade-in">
                     <div class="about-photo">
-                        <img src="caiden.png" alt="Caiden, founder of SpurIntel">
+                        <div class="about-photo-wrap">
+                            <img src="caiden.png" alt="Caiden, founder of SpurIntel">
+                        </div>
                         <div class="about-photo-caption">Caiden</div>
                     </div>
                     <div class="about-text">
